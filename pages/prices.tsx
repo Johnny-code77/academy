@@ -7,25 +7,25 @@ const pricingData = [
   {
     title: 'Online Presence',
     prices: {
-      student: '$99',
-      businessBasic: '$199',
-      businessPremium: '$299',
+      student: 'LSL 299',
+      businessBasic: 'LSL 499',
+      businessPremium: 'LSL 799',
     },
   },
   {
     title: 'Under the Hood',
     prices: {
-      student: '$149',
-      businessBasic: '$249',
-      businessPremium: '$349',
+      student: 'LSL 449',
+      businessBasic: 'LSL 799',
+      businessPremium: 'LSL 1,099',
     },
   },
   {
     title: 'Full Stack Mentorship',
     prices: {
-      student: '$199',
-      businessBasic: '$299',
-      businessPremium: '$399',
+      student: 'LSL 699',
+      businessBasic: 'LSL 1,299',
+      businessPremium: 'LSL 2,199',
     },
   },
 ];
@@ -47,19 +47,19 @@ const PricesPage: NextPage = () => {
               <ul className="list-none mb-0">
                 <li className="flex justify-between mb-2">
                   <span className="text-gray-600">Student:</span>
-                  <span className="text-lg font-bold">{service.prices.student}</span>
+                  <span className="text-lg font-bold text-gray-900">{service.prices.student}</span>
                 </li>
                 <li className="flex justify-between mb-2">
                   <span className="text-gray-600">Business Basic:</span>
-                  <span className="text-lg font-bold">{service.prices.businessBasic}</span>
+                  <span className="text-lg font-bold text-gray-900">{service.prices.businessBasic}</span>
                 </li>
                 <li className="flex justify-between">
                   <span className="text-gray-600">Business Premium:</span>
-                  <span className="text-lg font-bold">{service.prices.businessPremium}</span>
+                  <span className="text-lg font-bold text-gray-900">{service.prices.businessPremium}</span>
                 </li>
               </ul>
               <button className="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded-full mt-4">
-                Choose Plan
+                Register
               </button>
             </div>
           ))}

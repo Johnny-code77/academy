@@ -3,8 +3,97 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Link from 'next/link';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 const Home: NextPage = () => {
+  const topCourses = [
+    {
+      id: 1,
+      title: "Introduction to Web Development",
+      description: "Learn the basics of web development, including HTML, CSS, and JavaScript.",
+      duration: "6 months",
+      instructor: "Raymond Shao",
+      rating: 4.5, // Add a rating value
+    },
+    {
+      id: 2,
+      title: "Advanced React",
+      description: "Deep dive into advanced React concepts and state management with Redux.",
+      duration: "6 months",
+      instructor: "Raymond Shao",
+      rating: 4.7,
+    },
+    {
+      id: 3,
+      title: "Digital Marketing 101",
+      description: "Understand the fundamentals of digital marketing and how to create effective strategies.",
+      duration: "6 months",
+      instructor: "Raymond Shao",
+      rating: 4.3,
+    },
+    {
+      id: 4,
+      title: "Data Science with Python",
+      description: "Learn data analysis, visualization, and machine learning with Python.",
+      duration: "6 months",
+      instructor: "Raymond Shao",
+      rating: 4.8,
+    },
+  ];
+
+  const packages = [
+    {
+      id: 1,
+      name: "Online Presence",
+      description: "Enhance your online presence with our basic package",
+      features: [
+        "Your online business analysis",
+        "Website performance audit",
+        "Social media effectiveness review",
+        "Content strategy assessment",
+        "Online reputation management",
+        "SEO and SEM analysis",
+      ],
+      price: "LSL 299 per month",
+    },
+    {
+      id: 2,
+      name: "Business Basic",
+      description: "Get started with essential business tools",
+      features: [
+        "How React works under the hood",
+        "Transition to Next.js",
+        "API design and development",
+        "Database design",
+        "UX/UI principles",
+        "Learn Figma",
+        "Become part of the programming wars",
+        "Data structures and algorithms",
+        "Progressive web apps (PWAs)",
+      ],
+      price: "LSL 499 per month",
+    },
+    {
+      id: 3,
+      name: "Business Premium",
+      description: "A comprehensive package with advanced features",
+      features: [
+        "Become part of the programming wars",
+        "Data structures and algorithms",
+        "Progressive web apps (PWAs)",
+        "Web security best practices",
+        "DevOps for developers",
+        "Free wifi",
+        "08:00am to 04:00pm access to our CBD office",
+        "Webinar Sessions",
+        "Free consultation",
+      ],
+      price: "LSL 799 per month",
+    },
+  ];
+
   return (
     <div>
       <Head>
@@ -14,7 +103,63 @@ const Home: NextPage = () => {
       <Header />
       <main className="container mx-auto p-4">
         <h1 className="text-4xl font-bold mb-8">Welcome to Nucleus Academy</h1>
-        {/* Other content or components */}
+        <p className="text-lg mb-8">Learn from the best, achieve your goals</p>
+
+        {/* Top Courses Section */}
+        <section className="mb-12">
+          <h2 className="text-3xl font-semibold mb-6">Top Courses</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {topCourses.map(course => (
+              <div key={course.id} className="bg-white p-6 rounded-lg shadow-md">
+                <h3 className="text-xl font-semibold mb-2">{course.title}</h3>
+                <p className="text-gray-700 mb-2">{course.description}</p>
+                <p className="text-gray-500 mb-2">Duration: {course.duration}</p>
+                <p className="text-gray-500 mb-2">Instructor: {course.instructor}</p>
+                {/* Star Ratings */}
+                <div className="flex items-center">
+                  {[...Array(5)].map((_, i) => (
+                    <FontAwesomeIcon
+                      key={i}
+                      icon={faStar}
+                      className={i < Math.floor(course.rating) ? "text-yellow-500" : "text-gray-300"}
+                    />
+                  ))}
+                  <span className="ml-2 text-gray-600">({course.rating})</span>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-8">
+            <Link href="/courses" className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-300">
+              View All Courses
+            </Link>
+          </div>
+        </section>
+
+        {/* Packages Section */}
+        <section>
+          <h2 className="text-3xl font-semibold mb-6">Our Packages</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {packages.map(pkg => (
+              <div key={pkg.id} className="bg-white p-6 rounded-lg shadow-md">
+                <h3 className="text-xl font-semibold mb-2">{pkg.name}</h3>
+                <p className="text-gray-700 mb-2">{pkg.description}</p>
+                <ul className="list-disc list-inside text-gray-600 mb-4">
+                  {pkg.features.map((feature, index) => (
+                    <li key={index}>{feature}</li>
+                  ))}
+                </ul>
+                <p className="text-gray-900 font-bold mb-4">{pkg.price}</p>
+                <div className="text-center">
+                  <Link href="/register" className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-300">
+                    Register Now
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+        
       </main>
       <Footer />
     </div>
