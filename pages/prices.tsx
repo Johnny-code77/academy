@@ -2,65 +2,71 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Link from 'next/link';
 
 const pricingData = [
   {
     title: 'Online Presence',
     prices: {
-      student: 'LSL 299',
-      businessBasic: 'LSL 499',
-      businessPremium: 'LSL 799',
+      student: 'LSL 450',
+      businessBasic: 'LSL 800',
+      businessPremium: 'LSL 1,300',
     },
   },
   {
     title: 'Under the Hood',
     prices: {
-      student: 'LSL 449',
-      businessBasic: 'LSL 799',
-      businessPremium: 'LSL 1,099',
+      student: 'LSL 700',
+      businessBasic: 'LSL 1,500',
+      businessPremium: 'LSL 2,300',
     },
   },
   {
     title: 'Full Stack Mentorship',
     prices: {
-      student: 'LSL 699',
-      businessBasic: 'LSL 1,299',
-      businessPremium: 'LSL 2,199',
+      student: 'LSL 350',
+      businessBasic: 'LSL 2,300',
+      businessPremium: 'LSL 4,750',
     },
   },
 ];
 
 const PricesPage: NextPage = () => {
   return (
-    <div className="bg-gray-100 h-screen overflow-y-scroll">
+    <div className="bg-gray-900 text-gray-100 min-h-screen overflow-y-scroll">
       <Head>
         <title>Prices - Nucleus Academy</title>
         <meta name="description" content="Pricing for services at Nucleus Academy" />
       </Head>
       <Header />
       <main className="container mx-auto p-4 pt-20">
-        <h1 className="text-4xl font-bold mb-8 text-center">Our Prices</h1>
+        <h1 className="animate-pulse text-4xl font-bold mb-12 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Our Prices</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {pricingData.map((service) => (
-            <div key={service.title} className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300">
-              <h2 className="text-2xl font-semibold mb-4">{service.title}</h2>
+            <div
+              key={service.title}
+              className="bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-xl transform hover:-translate-y-2 transition duration-300"
+            >
+              <h2 className="text-2xl font-semibold mb-4 text-white">{service.title}</h2>
               <ul className="list-none mb-0">
                 <li className="flex justify-between mb-2">
-                  <span className="text-gray-600">Student:</span>
-                  <span className="text-lg font-bold text-gray-900">{service.prices.student}</span>
+                  <span className="text-gray-400">Student:</span>
+                  <span className="text-lg font-bold">{service.prices.student}</span>
                 </li>
                 <li className="flex justify-between mb-2">
-                  <span className="text-gray-600">Business Basic:</span>
-                  <span className="text-lg font-bold text-gray-900">{service.prices.businessBasic}</span>
+                  <span className="text-gray-400">Business Basic:</span>
+                  <span className="text-lg font-bold">{service.prices.businessBasic}</span>
                 </li>
                 <li className="flex justify-between">
-                  <span className="text-gray-600">Business Premium:</span>
-                  <span className="text-lg font-bold text-gray-900">{service.prices.businessPremium}</span>
+                  <span className="text-gray-400">Business Premium:</span>
+                  <span className="text-lg font-bold">{service.prices.businessPremium}</span>
                 </li>
               </ul>
-              <button className="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded-full mt-4">
-                Register
-              </button>
+              <div className="text-center mt-8">
+                <Link href="/register" className="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition duration-300">
+                  Register Now
+                </Link>
+              </div>
             </div>
           ))}
         </div>
