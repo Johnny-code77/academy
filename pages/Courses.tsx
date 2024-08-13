@@ -5,6 +5,8 @@ import Footer from '../components/Footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
+import { BackgroundGradient } from '@/components/ui/background-gredient';
+import Image from 'next/image';
 
 const coursesData = [
   {
@@ -12,7 +14,7 @@ const coursesData = [
     description: 'Learn the basics of web development with HTML, CSS, and JavaScript',
     duration: '6 months',
     price: 'LSL 299',
-    image: '/web.jpg', // Correct path
+    image: '/web.jpg',
     rating: 4,
   },
   {
@@ -20,7 +22,7 @@ const coursesData = [
     description: 'Build dynamic user interfaces with React',
     duration: '6 months',
     price: 'LSL 499',
-    image: '/react-js.png', // Correct path
+    image: '/react-js.png',
     rating: 5,
   },
   {
@@ -28,7 +30,7 @@ const coursesData = [
     description: 'Learn to build scalable and efficient full-stack applications with Node.js',
     duration: '6 months',
     price: 'LSL 999',
-    image: '/node.png', // Correct path
+    image: '/node.png',
     rating: 4,
   },
   {
@@ -36,7 +38,7 @@ const coursesData = [
     description: 'Learn to work with data using Python and popular libraries like Pandas and NumPy',
     duration: '6 months',
     price: 'LSL 699',
-    image: '/python.jpg', // Correct path
+    image: '/python.jpg',
     rating: 5,
   },
   {
@@ -44,7 +46,7 @@ const coursesData = [
     description: 'Dive into the world of machine learning using TensorFlow and Keras',
     duration: '6 months',
     price: 'LSL 899',
-    image: '/ML.jpg', // Correct path
+    image: '/ML.jpg',
     rating: 4,
   },
   {
@@ -52,7 +54,7 @@ const coursesData = [
     description: 'Understand the essentials of cybersecurity and how to protect systems and networks',
     duration: '6 months',
     price: 'LSL 799',
-    image: '/cyber.jpg', // Correct path
+    image: '/cyber.jpg',
     rating: 4,
   },
   {
@@ -60,7 +62,7 @@ const coursesData = [
     description: 'Learn how to automate deployments and manage applications with Docker and Kubernetes',
     duration: '6 months',
     price: 'LSL 1099',
-    image: '/dev.jpg', // Correct path
+    image: '/dev.jpg',
     rating: 5,
   },
   {
@@ -68,7 +70,7 @@ const coursesData = [
     description: 'Create cross-platform mobile apps using React Native',
     duration: '6 months',
     price: 'LSL 899',
-    image: '/native.png', // Correct path
+    image: '/native.png',
     rating: 4,
   },
   {
@@ -76,7 +78,7 @@ const coursesData = [
     description: 'Master advanced JavaScript concepts and techniques for modern web development',
     duration: '6 months',
     price: 'LSL 599',
-    image: '/web.jpg', // Correct path
+    image: '/web.jpg',
     rating: 4,
   },
   {
@@ -84,7 +86,7 @@ const coursesData = [
     description: 'Learn the fundamentals of user interface and user experience design',
     duration: '6 months',
     price: 'LSL 499',
-    image: '/ui.png', // Correct path
+    image: '/ui.png',
     rating: 3,
   },
   {
@@ -92,7 +94,7 @@ const coursesData = [
     description: 'Explore the world of blockchain technology and develop decentralized applications',
     duration: '6 months',
     price: 'LSL 999',
-    image: '/blockchain.jpg', // Correct path
+    image: '/blockchain.jpg',
     rating: 5,
   },
   {
@@ -100,7 +102,7 @@ const coursesData = [
     description: 'Gain expertise in cloud computing and AWS services',
     duration: '6 months',
     price: 'LSL 1099',
-    image: '/aws.jpg', // Correct path
+    image: '/aws.jpg',
     rating: 5,
   },
 ];
@@ -114,39 +116,52 @@ const CoursesPage: NextPage = () => {
       </Head>
       <Header />
       <main className="container mx-auto p-8">
-        <h1 className="animate-pulse text-4xl font-bold mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Our Courses</h1>
+        <h1 className="animate-pulse text-4xl font-bold mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
+          Our Courses
+        </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {coursesData.map((course) => (
-            <div key={course.title} className="bg-gray-800 p-6 rounded-lg shadow-lg transform hover:-translate-y-2 hover:shadow-lg transition duration-300">
-              <img
-                src={course.image}
-                alt={course.title}
-                className="w-full h-40 object-cover rounded-t-lg mb-4"
-              />
-              <h2 className="text-2xl font-semibold mb-4 text-blue-400">{course.title}</h2>
-              <p className="text-gray-300 mb-4">{course.description}</p>
-              <ul className="text-gray-300 mb-4">
-                <li className="mb-2">
-                  <strong>Duration:</strong> {course.duration}
-                </li>
-                <li>
-                  <strong>Price:</strong> {course.price}
-                </li>
-              </ul>
-              <div className="flex items-center mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <FontAwesomeIcon
-                    key={i}
-                    icon={faStar}
-                    className={`text-yellow-400 ${i < course.rating ? 'opacity-100' : 'opacity-50'}`}
-                    size="lg"
-                  />
-                ))}
+            <BackgroundGradient
+              key={course.title}
+              className="flex flex-col justify-between rounded-[22px] p-4 sm:p-6 bg-white dark:bg-zinc-900 h-full"
+            >
+              <div className="flex-1">
+                <Image
+                  src={course.image}
+                  alt={course.title}
+                  height={200}
+                  width={200}
+                  className="object-contain w-full h-40 mx-auto mb-4"
+                />
+                <h2 className="text-2xl font-semibold text-blue-400 text-center">
+                  {course.title}
+                </h2>
+                <p className="text-gray-300 mt-2 text-center">{course.description}</p>
+                <ul className="text-gray-300 mt-4 text-center">
+                  <li className="mb-2">
+                    <strong>Duration:</strong> {course.duration}
+                  </li>
+                  <li>
+                    <strong>Price:</strong> {course.price}
+                  </li>
+                </ul>
               </div>
-              <Link href="/register" className="block w-full py-2 bg-blue-500 text-white text-center rounded-lg hover:bg-blue-600 transition duration-300">
-                Register
-              </Link>
-            </div>
+              <div className="mt-4">
+                <div className="flex justify-center mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <FontAwesomeIcon
+                      key={i}
+                      icon={faStar}
+                      className={`text-yellow-400 ${i < course.rating ? 'opacity-100' : 'opacity-50'}`}
+                      size="lg"
+                    />
+                  ))}
+                </div>
+                <Link href="/register" className="block w-full py-2 bg-blue-500 text-white text-center rounded-lg hover:bg-blue-600 transition duration-300">
+                  Register
+                </Link>
+              </div>
+            </BackgroundGradient>
           ))}
         </div>
       </main>
