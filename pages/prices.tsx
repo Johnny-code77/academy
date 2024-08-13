@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Link from 'next/link';
+import { BackgroundGradient } from '@/components/ui/background-gredient';
 
 const pricingData = [
   {
@@ -40,15 +41,19 @@ const PricesPage: NextPage = () => {
       </Head>
       <Header />
       <main className="container mx-auto p-4 pt-20">
-        <h1 className="animate-pulse text-4xl font-bold mb-12 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Our Prices</h1>
+        <h1 className="animate-pulse text-4xl font-bold mb-12 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
+          Our Prices
+        </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {pricingData.map((service) => (
-            <div
+            <BackgroundGradient
               key={service.title}
-              className="bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-xl transform hover:-translate-y-2 transition duration-300"
+              className="flex flex-col justify-between rounded-[22px] p-6 bg-white dark:bg-zinc-900 h-full"
             >
-              <h2 className="text-2xl font-semibold mb-4 text-white">{service.title}</h2>
-              <ul className="list-none mb-0">
+              <h2 className="text-2xl font-semibold mb-4 text-center text-blue-400">
+                {service.title}
+              </h2>
+              <ul className="text-gray-300 text-center">
                 <li className="flex justify-between mb-2">
                   <span className="text-gray-400">Student:</span>
                   <span className="text-lg font-bold">{service.prices.student}</span>
@@ -67,7 +72,7 @@ const PricesPage: NextPage = () => {
                   Register Now
                 </Link>
               </div>
-            </div>
+            </BackgroundGradient>
           ))}
         </div>
       </main>
