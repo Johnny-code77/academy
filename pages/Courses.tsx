@@ -123,7 +123,7 @@ const CoursesPage: NextPage = () => {
           {coursesData.map((course) => (
             <BackgroundGradient
               key={course.title}
-              className="flex flex-col justify-between rounded-[22px] p-4 sm:p-6 bg-white dark:bg-zinc-900 h-full"
+              className="flex flex-col justify-between rounded-[22px] p-4 sm:p-6 bg-black text-white h-full"
             >
               <div className="flex-1">
                 <div className="flex justify-center">

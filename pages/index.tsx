@@ -1,4 +1,4 @@
-import styles from '../styles/globals.module.css';
+// pages/index.tsx
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Header from '../components/Header';
@@ -6,8 +6,8 @@ import Footer from '../components/Footer';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
-import { ShootingStars } from "@/components/ui/shooting-stars";
-import { StarsBackground } from "@/components/ui/stars-background";
+import { ShootingStars } from '@/components/ui/shooting-stars';
+import { StarsBackground } from '@/components/ui/stars-background';
 
 const Home: NextPage = () => {
   const topCourses = [
@@ -90,7 +90,6 @@ const Home: NextPage = () => {
         "Online reputation management",
         "SEO and SEM analysis",
       ],
-      // price: "LSL 299 per month", // Commented out price
     },
     {
       id: 2,
@@ -107,7 +106,6 @@ const Home: NextPage = () => {
         "Data structures and algorithms",
         "Progressive web apps (PWAs)",
       ],
-      // price: "LSL 499 per month", // Commented out price
     },
     {
       id: 3,
@@ -124,12 +122,11 @@ const Home: NextPage = () => {
         "Webinar Sessions",
         "Free consultation",
       ],
-      // price: "LSL 799 per month", // Commented out price
     },
   ];
 
   return (
-    <div className="bg-gray-900 text-gray-100 min-h-screen">
+    <div className="relative bg-gray-900 text-gray-100 min-h-screen overflow-hidden">
       <Head>
         <title>Home - Nucleus Academy</title>
         <meta name="description" content="Welcome to Nucleus Academy" />
@@ -144,15 +141,17 @@ const Home: NextPage = () => {
             Welcome to Nucleus Academy
           </h1>
           <p className="text-lg mb-8 text-gray-300 animate__animated animate__fadeIn animate__delay-2s">
-            Build Your Career With US <br/> We are not just IT & Software Engineering; <br/>
-            we are craftsmen. Our intention to aesthetics is simple<br/>
+            Build Your Career With US <br /> We are not just IT & Software Engineering; <br />
+            we are craftsmen. Our intention to aesthetics is simple<br />
             yet stings like bee.
           </p>
         </section>
 
         {/* Top Courses Section */}
         <section className="mb-12">
-          <h2 className="text-3xl font-semibold mb-6 text-blue-400 animate__animated animate__fadeIn animate__delay-3s">Top Courses</h2>
+          <h2 className="text-3xl font-semibold mb-6 text-blue-400 animate__animated animate__fadeIn animate__delay-3s">
+            Top Courses
+          </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {topCourses.map(course => (
               <div
@@ -177,7 +176,10 @@ const Home: NextPage = () => {
             ))}
           </div>
           <div className="text-center mt-8">
-            <Link href="/courses" className="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition duration-300 animate__animated animate__fadeIn animate__delay-4s">
+            <Link
+              href="/courses"
+              className="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition duration-300 animate__animated animate__fadeIn animate__delay-4s"
+            >
               View All Courses
             </Link>
           </div>
@@ -185,7 +187,9 @@ const Home: NextPage = () => {
 
         {/* Packages Section */}
         <section>
-          <h2 className="text-3xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 animate__animated animate__fadeIn animate__delay-5s">Our Packages</h2>
+          <h2 className="text-3xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 animate__animated animate__fadeIn animate__delay-5s">
+            Our Packages
+          </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {packages.map(pkg => (
               <div
@@ -199,10 +203,11 @@ const Home: NextPage = () => {
                     <li key={index}>{feature}</li>
                   ))}
                 </ul>
-                {/* Commented out price */}
-                {/* <p className="text-gray-300 font-bold mb-4">{pkg.price}</p> */}
                 <div className="text-center">
-                  <Link href="/register" className="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition duration-300 animate__animated animate__fadeIn animate__delay-6s">
+                  <Link
+                    href="/register"
+                    className="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition duration-300 animate__animated animate__fadeIn animate__delay-6s"
+                  >
                     Register Now
                   </Link>
                 </div>
@@ -210,6 +215,8 @@ const Home: NextPage = () => {
             ))}
           </div>
         </section>
+
+        {/* Thank You Section */}
         <section className="text-center mt-12 animate__animated animate__fadeIn animate__delay-7s">
           <h4 className="text-4xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
             Thank You <br /> For Being Part Of Our <br /> Community
