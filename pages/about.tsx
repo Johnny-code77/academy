@@ -46,8 +46,8 @@ const About: NextPage = () => {
         
         <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {[
-            { name: "Raymond Shao", role: "CEO", img: "./raymond.jpg", twitter: "#", linkedin: "#", facebook: "#" },
-            { name: "Kamohelo Khosana", role: "Chef Operator", img: "./kamohelo.jpg", twitter: "#", linkedin: "#", facebook: "#" },
+            { name: "Raymond Shao", role: "Chief Executive Officer", img: "./raymond.jpg", twitter: "#", linkedin: "#", facebook: "#" },
+            { name: "Kamohelo Khosana", role: "Chief Operator", img: "./kamohelo.jpg", twitter: "#", linkedin: "#", facebook: "#" },
             { name: "Tankiso Fuma", role: "Senior Software Engineer", img: "./tankiso_fuma.jpg", twitter: "#", linkedin: "#", facebook: "#" },
             { name: "Molapo Matoloane", role: "Junior Software Engineer", img: "./molapo.jpg", twitter: "#", linkedin: "#", facebook: "#" },
             { name: "Tlotliso Makae", role: "Intern", img: "./tlotliso.jpg", twitter: "#", linkedin: "#", facebook: "#" },

@@ -4,14 +4,14 @@ import logo from '../images/nu.png';
 
 const Header = () => {
   return (
-    <header className="bg-gray-900 py-6 shadow-lg">
+    <header className="bg-gray-900 py-6 shadow-lg" style={{zIndex: 9999}}>
       <nav className="container mx-auto flex justify-between items-center">
         <div className="flex items-center">
           <Link href="/">
-            <Image src={logo} alt="Nucleus Academy" width={50} height={50} />
+            <Image src={logo} alt="Nucleus Academy" width={50} height={50} style={{zIndex: 9999}} />
           </Link>
         </div>
-        <div className="flex-1 flex justify-center items-center space-x-8">
+        <div className="flex-1 flex justify-center items-center space-x-8" style={{zIndex: 9999}}>
           <Link href="/" className="hidden md:inline-block text-gray-300 hover:text-white transition duration-200 no-underline">
             Home
           </Link>

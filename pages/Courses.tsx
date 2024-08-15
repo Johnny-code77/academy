@@ -126,13 +126,15 @@ const CoursesPage: NextPage = () => {
               className="flex flex-col justify-between rounded-[22px] p-4 sm:p-6 bg-white dark:bg-zinc-900 h-full"
             >
               <div className="flex-1">
-                <Image
-                  src={course.image}
-                  alt={course.title}
-                  height={200}
-                  width={200}
-                  className="object-contain w-full h-40 mx-auto mb-4"
-                />
+                <div className="flex justify-center">
+                  <Image
+                    src={course.image}
+                    alt={course.title}
+                    height={200}
+                    width={200}
+                    className="object-cover rounded-xl w-full h-40 mb-4 shadow-md border border-gray-300 dark:border-gray-700"
+                  />
+                </div>
                 <h2 className="text-2xl font-semibold text-blue-400 text-center">
                   {course.title}
                 </h2>

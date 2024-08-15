@@ -21,7 +21,7 @@ const Contact = () => {
             <div>
               <h2 className="text-2xl font-semibold text-blue-400 mb-4">Contact Information</h2>
               <p className="text-gray-400 mb-2">
-                <strong>Email:</strong> info@nucleusacademy.com
+                <strong>Email:</strong> nucleusdevs@gmail.com
               </p>
               <p className="text-gray-400 mb-2">
                 <strong>Phone:</strong> +266 59749725

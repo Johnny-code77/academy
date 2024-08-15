@@ -6,6 +6,8 @@ import Footer from '../components/Footer';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { ShootingStars } from "@/components/ui/shooting-stars";
+import { StarsBackground } from "@/components/ui/stars-background";
 
 const Home: NextPage = () => {
   const topCourses = [
@@ -134,6 +136,8 @@ const Home: NextPage = () => {
       </Head>
       <Header />
       <main className="container mx-auto p-4">
+      <ShootingStars />
+      <StarsBackground />
         {/* Header Section */}
         <section className="text-center mb-12">
           <h1 className="text-5xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 animate__animated animate__fadeIn animate__delay-1s">
