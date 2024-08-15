@@ -1,4 +1,3 @@
-// pages/index.tsx
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Header from '../components/Header';
@@ -6,7 +5,7 @@ import Footer from '../components/Footer';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
-import { ShootingStars } from '@/components/ui/shooting-stars';
+import  {ShootingStars}  from '@/components/ui/shooting-stars';
 import { StarsBackground } from '@/components/ui/stars-background';
 
 const Home: NextPage = () => {
@@ -133,8 +132,6 @@ const Home: NextPage = () => {
       </Head>
       <Header />
       <main className="container mx-auto p-4">
-      <ShootingStars />
-      <StarsBackground />
         {/* Header Section */}
         <section className="text-center mb-12">
           <h1 className="text-5xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 animate__animated animate__fadeIn animate__delay-1s">
@@ -152,7 +149,7 @@ const Home: NextPage = () => {
           <h2 className="text-3xl font-semibold mb-6 text-blue-400 animate__animated animate__fadeIn animate__delay-3s">
             Top Courses
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" style={{zIndex: 9999}}>
             {topCourses.map(course => (
               <div
                 key={course.id}
@@ -175,7 +172,7 @@ const Home: NextPage = () => {
               </div>
             ))}
           </div>
-          <div className="text-center mt-8">
+          <div className="text-center mt-8"style={{zIndex: 9999}}>
             <Link
               href="/courses"
               className="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition duration-300 animate__animated animate__fadeIn animate__delay-4s"
@@ -190,7 +187,7 @@ const Home: NextPage = () => {
           <h2 className="text-3xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 animate__animated animate__fadeIn animate__delay-5s">
             Our Packages
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"style={{zIndex: 9999}}>
             {packages.map(pkg => (
               <div
                 key={pkg.id}
@@ -203,7 +200,7 @@ const Home: NextPage = () => {
                     <li key={index}>{feature}</li>
                   ))}
                 </ul>
-                <div className="text-center">
+                <div className="text-center"style={{zIndex: 9999}}>
                   <Link
                     href="/register"
                     className="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition duration-300 animate__animated animate__fadeIn animate__delay-6s"
@@ -222,6 +219,8 @@ const Home: NextPage = () => {
             Thank You <br /> For Being Part Of Our <br /> Community
           </h4>
         </section>
+        <ShootingStars />
+      <StarsBackground />
       </main>
       <Footer />
     </div>

@@ -3,9 +3,9 @@ import Link from 'next/link';
 const Footer = () => {
   return (
     <footer className="bg-gray-900 p-4 text-gray-300 mt-8">
-      <div className="container mx-auto text-center">
+      <div className="container mx-auto text-center"style={{zIndex: 9999}}>
         <p>&copy; 2024 Nucleus Academy. All rights reserved.</p>
-        <div className="flex justify-center mt-4 space-x-4">
+        <div className="flex justify-center mt-4 space-x-4"style={{zIndex: 9999}}>
           {/* Facebook */}
           <Link href="https://www.facebook.com" target="_blank" aria-label="Facebook" className="hover:text-white transition duration-200">
             <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

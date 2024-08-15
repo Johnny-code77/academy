@@ -31,9 +31,9 @@ const Header = () => {
             Blog
           </Link>
         </div>
-        <div className="flex justify-end">
+        <div className="flex justify-end" style={{zIndex: 9999}}>
           <div className="relative group mr-6">
-            <button className="px-6 py-2 border border-violet-400 rounded-full hover:bg-gray-800 text-violet-400 shadow-md hover:shadow-xl transform transition-all duration-300 group-hover:translate-x-1 group-hover:translate-y-1">
+            <button className="px-6 py-2 border border-violet-400 rounded-full hover:bg-gray-800 text-violet-400 shadow-md hover:shadow-xl transform transition-all duration-300 group-hover:translate-x-1 group-hover:translate-y-1 ">
               <Link href="/login" className="font-medium group-hover:text-violet-400 transition duration-200 no-underline">
                 Login
               </Link>

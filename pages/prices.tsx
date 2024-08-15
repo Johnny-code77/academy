@@ -48,7 +48,7 @@ const PricesPage: NextPage = () => {
           {pricingData.map((service) => (
             <BackgroundGradient
               key={service.title}
-              className="flex flex-col justify-between rounded-[22px] p-6 bg-black text-white h-full"
+              className="flex flex-col justify-between rounded-[22px] p-6 bg-gray-800 text-white h-full"
             >
               <h2 className="text-2xl font-semibold mb-4 text-center text-blue-400">
                 {service.title}

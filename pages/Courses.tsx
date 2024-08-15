@@ -106,7 +106,6 @@ const coursesData = [
     rating: 5,
   },
 ];
-
 const CoursesPage: NextPage = () => {
   return (
     <div className="bg-gray-900 text-gray-100 min-h-screen">
@@ -123,7 +122,7 @@ const CoursesPage: NextPage = () => {
           {coursesData.map((course) => (
             <BackgroundGradient
               key={course.title}
-              className="flex flex-col justify-between rounded-[22px] p-4 sm:p-6 bg-black text-white h-full"
+              className="flex flex-col justify-between rounded-[22px] p-4 sm:p-6 bg-gray-800 h-full"
             >
               <div className="flex-1">
                 <div className="flex justify-center">
